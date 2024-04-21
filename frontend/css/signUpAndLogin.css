@@ -1,0 +1,94 @@
+.sideSection {
+    width: 30%;
+    height: 100vh;
+    background-color: #44dc64;
+}
+.container {
+    height: 70vh;
+    margin-top: 22.8vh;
+    text-align: center;
+}
+.container h1 {
+    font-size: 2.5em;
+}
+.container p {
+    font-size: 1.3em;
+    margin-top: 45px;
+}
+.container button {
+    height: 70px;
+    width: 200px;
+    margin-top: 50px;
+    border-radius: 15px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 5px 7px 5px rgb(41, 175, 41);
+    background-color: #44dc64;
+    cursor: pointer;
+    text-transform: uppercase; 
+    color: white;
+}
+.container button:hover {
+    transform: scale(1.05);
+}
+.mainContent {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #44dc64;
+    font-weight: 800;
+    text-transform: uppercase; 
+}
+.formSignUpAndLogin {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputAndIcon {
+    width: 80%;
+    height: 90px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+.inputAndIcon img {
+    height: 80%;
+}
+.input{
+    width: 90%;
+    height: 98%;
+    border: 0;
+    border-radius: 20px;
+    background-color: #f4f4f4;
+}
+.input::-webkit-input-placeholder  { 
+    color: #aeaeae; 
+    font-size: 1.3em;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translateY(-50%);
+}
+.buttonInput{
+    width: 50%;
+    height: 60px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #44dc64;
+    cursor: pointer;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 30px;
+    text-transform: uppercase; 
+}
