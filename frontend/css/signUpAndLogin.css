@@ -1,7 +1,7 @@
 .sideSection {
     width: 30%;
     height: 100vh;
-    background-color: #44dc64;
+    background-color: #689ECA;
 }
 .container {
     height: 70vh;
@@ -23,8 +23,8 @@
     border-color: white;
     border-width: 2px;
     border-style: solid;
-    box-shadow: 5px 7px 5px rgb(41, 175, 41);
-    background-color: #44dc64;
+    box-shadow: 5px 7px 5px #598cb6;
+    background-color: #689ECA;
     cursor: pointer;
     text-transform: uppercase; 
     color: white;
@@ -39,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    color: #44dc64;
+    color: #689ECA;
     font-weight: 800;
     text-transform: uppercase; 
 }
@@ -84,7 +84,7 @@
     height: 60px;
     border-radius: 20px;
     border: 0;
-    background-color: #44dc64;
+    background-color: #689ECA;
     cursor: pointer;
     color: white;
     font-size: 1.3em;
