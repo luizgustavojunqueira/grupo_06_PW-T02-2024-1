@@ -8,3 +8,12 @@ a {
     text-decoration: none;
     color: white;
 }
+.input::-webkit-input-placeholder  { 
+    color: #aeaeae; 
+    font-size: 1.3em;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translateY(-50%);
+}

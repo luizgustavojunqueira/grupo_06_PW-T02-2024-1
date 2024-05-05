@@ -43,7 +43,7 @@
     font-weight: 800;
     text-transform: uppercase; 
 }
-.formSignUpAndLogin {
+.formSignUp {
     height: 70%;
     width: 100%;
     display: flex;
@@ -69,15 +69,6 @@
     border: 0;
     border-radius: 20px;
     background-color: #f4f4f4;
-}
-.input::-webkit-input-placeholder  { 
-    color: #aeaeae; 
-    font-size: 1.3em;
-    font-weight: 600;
-    position: absolute;
-    top: 50%;
-    left: 40%;
-    transform: translateY(-50%);
 }
 .buttonInput{
     width: 50%;
