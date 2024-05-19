@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import locale from '../assets/utils/javascript/locale';
 
-export function Month() {
+export function MonthCalendar() {
 
   return (
     <div>
