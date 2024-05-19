@@ -2,11 +2,13 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import locale from '../assets/utils/javascript/locale';
+import '../assets/utils/css/geral.css'
+import '../assets/utils/css/month.css'
 
 export function MonthCalendar() {
 
   return (
-    <div>
+    <main className='calendarContent'>
       <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin ]}
         initialView='dayGridMonth'
@@ -14,6 +16,6 @@ export function MonthCalendar() {
         locales={[locale]}
         fixedWeekCount={false}
       />
-    </div>
+    </main>
   )
 }
