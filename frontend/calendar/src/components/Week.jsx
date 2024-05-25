@@ -4,6 +4,7 @@ import interactionPlugin from "@fullcalendar/interaction"
 import timeGridPlugin from '@fullcalendar/timegrid'
 import ptBrLocale  from '../assets/utils/javascript/locale'
 import '../assets/utils/css/geral.css'
+import '../assets/utils/css/week.css'
 
 export function WeekCalendar() {
 

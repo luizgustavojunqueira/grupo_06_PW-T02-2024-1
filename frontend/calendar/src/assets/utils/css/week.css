@@ -1,0 +1,31 @@
+.calendarWeekContent {
+    width: 99vw;
+}
+
+.calendarWeekContent .fc-scrollgrid-sync-inner {
+    background-color: white!important;
+}
+
+.calendarWeekContent th .fc-timegrid-axis {
+    background-color: white!important;
+}
+
+.calendarWeekContent .fc-timegrid-slots {
+    z-index: 0;
+}
+
+.calendarWeekContent tr .fc-timegrid-slot-label {
+    background-color: white;
+}
+
+.calendarWeekContent .fc-timegrid-slot-lane {
+    background-color: white!important;
+} 
+
+.calendarWeekContent .fc-timeGridWeek-view {
+    height: 129vh!important;
+}
+
+.calendarWeekContent .fc-scroller-harness-liquid {
+    height: calc(130vh - 39px)!important;
+}
