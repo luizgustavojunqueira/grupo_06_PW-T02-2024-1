@@ -2,6 +2,51 @@
     width: 99vw;
 }
 
+.calendarDayContent .fc-header-toolbar {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarDayContent .fc-toolbar-chunk {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarDayContent .fc-toolbar-title {
+    color: #689ECA!important;
+}
+
+.calendarDayContent .fc-today-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px!important;
+}
+
+.calendarDayContent .fc-button-group {
+    width: 300px;
+}
+
+.calendarDayContent .fc-button {
+    width: 50px;
+    flex: none!important;
+    background-color: #689ECA!important;
+}
+
+.calendarDayContent .fc-next-button {
+    position: absolute;
+    left: 50%;
+}
+
+.calendarDayContent .fc-prev-button {
+    position: absolute;
+    left: 13%;
+}
+
 .calendarDayContent .fc-scrollgrid-sync-inner {
     background-color: white!important;
 }

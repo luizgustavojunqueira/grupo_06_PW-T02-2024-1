@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import './assets/utils/css/geral.css'
 import { MonthCalendar } from './components/Month'
 import { WeekCalendar } from './components/Week';
 import { DayCalendar } from './components/Day';
@@ -22,11 +23,15 @@ function App() {
 
   return (
     <>
-      <div>
-        <button onClick={() => setView('month')}>Mês</button>
-        <button onClick={() => setView('week')}>Semana</button>
-        <button onClick={() => setView('day')}>Dia</button>
-      </div>
+      <header className='divheader'>
+        <h1>Calendar</h1>
+        <div className='divButtons'>
+          <button className='viewModeButton' onClick={() => setView('month')}>Mês</button>
+          <button className='viewModeButton' onClick={() => setView('week')}>Semana</button>
+          <button className='viewModeButton' onClick={() => setView('day')}>Dia</button>
+          <button className='settingsButton'><p>C</p></button>
+        </div>
+      </header>
       {renderView()}
     </>
   )

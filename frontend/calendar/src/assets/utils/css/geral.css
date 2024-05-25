@@ -1,3 +1,43 @@
+.divheader {
+    display: flex;
+    width: 100%;
+    background-color: #689ECA;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.divheader h1 {
+    margin-left: 20px;
+}
+
+.divButtons {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.viewModeButton {
+    width: calc(25% - 25px);
+    background-color: #689ECA;
+    border-color: white;
+}
+
+.settingsButton {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B199D7;
+}
+
 .fc-col-header-cell-cushion {
     color: black!important;
 }
@@ -5,4 +45,7 @@
 .fc-timegrid-slot-label-cushion {
     color: black!important;   
 }
-  
+
+.fc-today-button {
+    opacity: 1!important;
+}
