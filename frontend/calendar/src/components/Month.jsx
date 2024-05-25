@@ -8,7 +8,7 @@ import '../assets/utils/css/month.css'
 export function MonthCalendar() {
 
   return (
-    <main className='calendarContent'>
+    <main className='calendarMonthContent'>
       <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin ]}
         initialView='dayGridMonth'

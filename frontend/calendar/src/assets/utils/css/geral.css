@@ -1,7 +1,8 @@
-.calendarContent {
-    width: 99vw;
+.fc-col-header-cell-cushion {
+    color: black!important;
 }
 
-  
-
+.fc-timegrid-slot-label-cushion {
+    color: black!important;   
+}
   

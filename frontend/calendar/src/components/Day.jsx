@@ -4,12 +4,12 @@ import interactionPlugin from "@fullcalendar/interaction"
 import timeGridPlugin from '@fullcalendar/timegrid'
 import ptBrLocale  from '../assets/utils/javascript/locale'
 import '../assets/utils/css/geral.css'
-import '../assets/utils/css/dia.css'
+import '../assets/utils/css/day.css'
 
 export function DayCalendar() {
 
   return (
-    <main className='calendarContent'>
+    <main className='calendarDayContent'>
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin ]}
         initialView='timeGridDay'

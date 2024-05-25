@@ -8,7 +8,7 @@ import '../assets/utils/css/geral.css'
 export function WeekCalendar() {
 
   return (
-    <main className='calendarContent'>
+    <main className='calendarWeekContent'>
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin ]}
         initialView='timeGridWeek'

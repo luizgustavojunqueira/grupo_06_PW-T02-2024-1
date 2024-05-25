@@ -1,3 +1,59 @@
 :root {
     --fc-border-color: black;
 }
+
+.calendarMonthContent {
+    width: 99vw;
+}
+
+.calendarMonthContent .fc-col-header-cell {
+    background-color: white!important;
+}
+
+.calendarMonthContent .fc-dayGridMonth-view {
+    height: 800px!important;
+}
+
+.calendarMonthContent .fc-scroller-harness-liquid {
+    height: 800px!important
+}
+
+.calendarMonthContent td .fc-day-past {
+    background-color: white!important;
+    height: 150px!important;
+}
+
+.calendarMonthContent td .fc-day-future {
+    background-color: white!important;
+    height: 150px!important;
+}
+
+.calendarMonthContent td .fc-day-today {
+    background-color: white!important;
+    height: 150px!important;
+}
+
+.calendarMonthContent .fc-timeGridMonthview {
+    height: 100vh!important;
+}
+
+.calendarMonthContent .fc-daygrid-day-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendarMonthContent .fc-daygrid-day-number{
+    color: black!important;
+}
+
+.calendarMonthContent td .fc-day-today .fc-daygrid-day-top{
+    width: 40px;
+    height: 40px;
+    background-color: #598cb6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
