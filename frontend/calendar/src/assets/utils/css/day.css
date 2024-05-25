@@ -1,0 +1,23 @@
+.calendarDayContent {
+    width: 99vw;
+}
+
+.calendarDayContent .fc-scrollgrid-sync-inner {
+    background-color: white!important;
+}
+
+.calendarDayContent .fc-timegrid-slot {
+    background-color: white!important;
+}
+
+.calendarDayContent .fc-timegrid-axis {
+    background-color: white!important;
+}
+
+.calendarDayContent .fc-timeGridDay-view {
+    height: 129vh!important;
+}
+
+.calendarDayContent .fc-scroller-harness-liquid {
+    height: calc(130vh - 39px)!important;
+}
