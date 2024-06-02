@@ -37,7 +37,7 @@ export function MonthCalendar() {
         events={events}
         dateClick={handleDateClick}
       />
-      <ModalAddEvent isOpen={modalOpen} onClose={closeModal} selectedDate={selectedDate} initialStartTime={''}/>
+      <ModalAddEvent isOpen={modalOpen} onClose={closeModal} selectedDate={selectedDate}/>
     </main>
   )
 }

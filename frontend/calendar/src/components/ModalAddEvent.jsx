@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/utils/css/modalAddEvent.css'
 
-function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime }) {
+function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:00' }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [startTime, setStartTime] = useState(initialStartTime);
@@ -52,10 +52,12 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime }) {
           <h2>Adicionar Evento no dia <br/> {selectedDate}</h2>
           <label htmlFor="title">Título:</label>
           <input type="text" id="title" value={title} onChange={handleTitleChange} />
-          <label htmlFor="startTime">Hora de Início:</label>
-          <input type="time" className="inputTime" value={startTime} onChange={handleStartTimeChange} />
-          <label htmlFor="startTime">Hora de Término:</label>
-          <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
+          <div className='schedule-container'>
+            <label htmlFor="startTime">Hora de Início:</label>
+            <input type="time" className="inputTime" value={startTime} onChange={handleStartTimeChange} />
+            <label htmlFor="startTime">Hora de Término:</label>
+            <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
+          </div>
           <label htmlFor="description">Descrição:</label>
           <textarea id="description" value={description} onChange={handleDescriptionChange} />
           <button className="submitButton" onClick={handleSubmit}>Adicionar Evento</button>
