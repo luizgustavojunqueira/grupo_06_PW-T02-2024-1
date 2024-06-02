@@ -8,14 +8,20 @@ import { DayCalendar } from './components/Day';
 function App() {
   const [view, setView] = useState('month')
 
+  /* virá do banco de dados */
+  const events = [
+    { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00' },
+    { title: 'Evento 2', start: '2024-06-03T12:00:00', end: '2024-06-03T14:00:00' }
+  ]
+
   const renderView = () => {
     switch (view) {
       case 'month':
-        return <MonthCalendar />;
+        return <MonthCalendar events={events}/>;
       case 'week':
-        return <WeekCalendar />;
+        return <WeekCalendar events={events}/>;
       case 'day':
-        return <DayCalendar />;
+        return <DayCalendar events={events}/>;
       default:
         return null;
     }

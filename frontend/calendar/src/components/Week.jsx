@@ -8,17 +8,13 @@ import '../assets/utils/css/geral.css'
 import '../assets/utils/css/week.css'
 import ModalAddEvent from './ModalAddEvent';
 
-export function WeekCalendar() {
+export function WeekCalendar({ events }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
 
-  const events = [
-    { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00' },
-    { title: 'Evento 2', start: '2024-06-03T12:00:00', end: '2024-06-03T14:00:00' }
-  ]
-
   const handleDateClick = (arg) => {
+    console.log(events)
     const hours = arg.date.getHours();
     const minutes = arg.date.getMinutes();
     const date = new Date(arg.date);

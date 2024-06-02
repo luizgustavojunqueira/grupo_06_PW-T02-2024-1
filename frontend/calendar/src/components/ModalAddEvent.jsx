@@ -28,6 +28,7 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
   };
 
   const handleSubmit = () => {
+    /* salvar no banco de dados */
     console.log('Título:', title);
     console.log('Descrição:', description);
     console.log('horario: ', startTime)

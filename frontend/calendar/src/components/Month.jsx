@@ -7,14 +7,9 @@ import '../assets/utils/css/geral.css'
 import '../assets/utils/css/month.css'
 import ModalAddEvent from './ModalAddEvent';
 
-export function MonthCalendar() {
+export function MonthCalendar({events}) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
-
-  const events = [
-    { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00' },
-    { title: 'Evento 2', start: '2024-06-02T12:00:00', end: '2024-06-02T14:00:00' }
-  ]
 
   const handleDateClick = (arg) => {
     setSelectedDate(arg.dateStr);

@@ -8,15 +8,10 @@ import '../assets/utils/css/geral.css'
 import '../assets/utils/css/day.css'
 import ModalAddEvent from './ModalAddEvent';
 
-export function DayCalendar() {
+export function DayCalendar({events}) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
-
-  const events = [
-    { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00' },
-    { title: 'Evento 2', start: '2024-06-02T12:00:00', end: '2024-06-02T14:00:00' }
-  ]
 
   const handleDateClick = (arg) => {
     const hours = arg.date.getHours();
