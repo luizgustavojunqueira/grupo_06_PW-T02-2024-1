@@ -10,7 +10,6 @@
 }
 
 .calendarDayContent .fc-toolbar-chunk {
-    width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,14 +20,12 @@
 }
 
 .calendarDayContent .fc-today-button {
-    position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     width: 60px!important;
 }
 
 .calendarDayContent .fc-button-group {
-    width: 300px;
+    width: 100px;
 }
 
 .calendarDayContent .fc-button {
@@ -38,13 +35,7 @@
 }
 
 .calendarDayContent .fc-next-button {
-    position: absolute;
-    left: 50%;
-}
-
-.calendarDayContent .fc-prev-button {
-    position: absolute;
-    left: 13%;
+    margin-left: 10px!important;
 }
 
 .calendarDayContent .fc-scrollgrid-sync-inner {

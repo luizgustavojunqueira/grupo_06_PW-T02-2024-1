@@ -14,7 +14,6 @@
 }
 
 .calendarMonthContent .fc-toolbar-chunk {
-    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,14 +24,8 @@
 }
 
 .calendarMonthContent .fc-today-button {
-    position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     width: 60px!important;
-}
-
-.calendarMonthContent .fc-button-group {
-    width: 200px;
 }
 
 .calendarMonthContent .fc-button {
@@ -42,12 +35,13 @@
 }
 
 .calendarMonthContent .fc-next-button {
-    position: absolute;
-    left: 45%;
+    margin-left: 20px!important;
 }
 
 .calendarMonthContent .fc-col-header-cell {
     background-color: white!important;
+    border-left: none;
+    border-right: none;
 }
 
 .calendarMonthContent .fc-dayGridMonth-view {
@@ -96,4 +90,3 @@
     justify-content: center;
     align-items: center;
 }
-
