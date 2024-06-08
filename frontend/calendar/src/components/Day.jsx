@@ -8,8 +8,7 @@ import '../assets/utils/css/geral.css'
 import '../assets/utils/css/day.css'
 import ModalAddEvent from './ModalAddEvent';
 
-export function DayCalendar({events}) {
-  const [modalOpen, setModalOpen] = useState(false);
+export function DayCalendar({ events, modalOpen, setModalOpen }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
 

@@ -7,6 +7,7 @@ import { DayCalendar } from './components/Day';
 
 function App() {
   const [view, setView] = useState('month')
+  const [modalOpen, setModalOpen] = useState(false);
 
   /* virá do banco de dados */
   const events = [
@@ -17,11 +18,11 @@ function App() {
   const renderView = () => {
     switch (view) {
       case 'month':
-        return <MonthCalendar events={events}/>;
+        return <MonthCalendar events={events} modalOpen={modalOpen} setModalOpen={setModalOpen}/>;
       case 'week':
-        return <WeekCalendar events={events}/>;
+        return <WeekCalendar events={events} modalOpen={modalOpen} setModalOpen={setModalOpen}/>;
       case 'day':
-        return <DayCalendar events={events}/>;
+        return <DayCalendar events={events} modalOpen={modalOpen} setModalOpen={setModalOpen}/>;
       default:
         return null;
     }

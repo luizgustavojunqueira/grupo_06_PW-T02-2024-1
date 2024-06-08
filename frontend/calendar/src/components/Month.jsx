@@ -7,8 +7,7 @@ import '../assets/utils/css/geral.css'
 import '../assets/utils/css/month.css'
 import ModalAddEvent from './ModalAddEvent';
 
-export function MonthCalendar({events}) {
-  const [modalOpen, setModalOpen] = useState(false);
+export function MonthCalendar({ events, modalOpen, setModalOpen }) {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateClick = (arg) => {

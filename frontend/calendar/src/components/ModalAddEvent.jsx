@@ -28,7 +28,7 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
   };
 
   const handleSubmit = () => {
-    /* salvar no banco de dados */
+    /* salvar no banco de dados e, provavelmente, atualizar uma var que irá atualizar a renderização dos eventos*/
     console.log('Título:', title);
     console.log('Descrição:', description);
     console.log('horario: ', startTime)

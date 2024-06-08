@@ -8,8 +8,7 @@ import '../assets/utils/css/geral.css'
 import '../assets/utils/css/week.css'
 import ModalAddEvent from './ModalAddEvent';
 
-export function WeekCalendar({ events }) {
-  const [modalOpen, setModalOpen] = useState(false);
+export function WeekCalendar({ events, modalOpen, setModalOpen }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
 
