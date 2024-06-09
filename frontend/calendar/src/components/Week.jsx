@@ -7,10 +7,13 @@ import ptBrLocale  from '../assets/utils/javascript/locale'
 import '../assets/utils/css/geral.css'
 import '../assets/utils/css/week.css'
 import ModalAddEvent from './ModalAddEvent';
+import ModalEditEvent from './ModalEditEvent';
 
 export function WeekCalendar({ events, modalOpen, setModalOpen }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
+  const [eventModalOpen, setEventModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(false);
 
   const handleDateClick = (arg) => {
     console.log(events)
@@ -30,9 +33,18 @@ export function WeekCalendar({ events, modalOpen, setModalOpen }) {
     setModalOpen(true);
   };
 
+  const handleEventClick = (arg) => {
+    setSelectedEvent(arg.event);
+    setEventModalOpen(true);
+  };
+
   const closeModal = () => {
     setModalOpen(false);
     setSelectedDate(null);
+  };
+
+  const closeEditEventModal = () => {
+    setEventModalOpen(false);
   };
 
   return (
@@ -45,8 +57,10 @@ export function WeekCalendar({ events, modalOpen, setModalOpen }) {
         allDaySlot={false}
         events={events}
         dateClick={handleDateClick}
+        eventClick={handleEventClick}
       />
       <ModalAddEvent isOpen={modalOpen} onClose={closeModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} />
+      <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent}/>
     </main>
   )
 }
