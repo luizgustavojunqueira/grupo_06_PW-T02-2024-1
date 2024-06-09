@@ -9,14 +9,13 @@ import '../assets/utils/css/week.css'
 import ModalAddEvent from './ModalAddEvent';
 import ModalEditEvent from './ModalEditEvent';
 
-export function WeekCalendar({ events, modalOpen, setModalOpen }) {
+export function WeekCalendar({ events, modalAddEventOpen, setModalAddEventOpen }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
 
   const handleDateClick = (arg) => {
-    console.log(events)
     const hours = arg.date.getHours();
     const minutes = arg.date.getMinutes();
     const date = new Date(arg.date);
@@ -30,7 +29,7 @@ export function WeekCalendar({ events, modalOpen, setModalOpen }) {
     setSelectedDate(formattedDate);
     setSelectedStartTime(formattedTime)
 
-    setModalOpen(true);
+    setModalAddEventOpen(true);
   };
 
   const handleEventClick = (arg) => {
@@ -38,8 +37,8 @@ export function WeekCalendar({ events, modalOpen, setModalOpen }) {
     setEventModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const closeAddEventModal = () => {
+    setModalAddEventOpen(false);
     setSelectedDate(null);
   };
 
@@ -59,7 +58,7 @@ export function WeekCalendar({ events, modalOpen, setModalOpen }) {
         dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
-      <ModalAddEvent isOpen={modalOpen} onClose={closeModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} />
+      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} />
       <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent}/>
     </main>
   )

@@ -9,7 +9,7 @@ import '../assets/utils/css/day.css'
 import ModalAddEvent from './ModalAddEvent';
 import ModalEditEvent from './ModalEditEvent';
 
-export function DayCalendar({ events, modalOpen, setModalOpen }) {
+export function DayCalendar({ events, modalAddEventOpen, setModalAddEventOpen }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedStartTime, setSelectedStartTime ] = useState('');
   const [eventModalOpen, setEventModalOpen] = useState(false);
@@ -29,7 +29,7 @@ export function DayCalendar({ events, modalOpen, setModalOpen }) {
     setSelectedDate(formattedDate);
     setSelectedStartTime(formattedTime)
 
-    setModalOpen(true);
+    setModalAddEventOpen(true);
   };
 
   const handleEventClick = (arg) => {
@@ -37,8 +37,8 @@ export function DayCalendar({ events, modalOpen, setModalOpen }) {
     setEventModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const closeAddEventModal = () => {
+    setModalAddEventOpen(false);
     setSelectedDate(null);
   };
 
@@ -58,7 +58,7 @@ export function DayCalendar({ events, modalOpen, setModalOpen }) {
         dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
-      <ModalAddEvent isOpen={modalOpen} onClose={closeModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} />
+      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} />
       <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent}/>
     </main>
   )

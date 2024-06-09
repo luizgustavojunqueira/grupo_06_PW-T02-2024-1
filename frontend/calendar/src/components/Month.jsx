@@ -8,14 +8,14 @@ import '../assets/utils/css/month.css'
 import ModalAddEvent from './ModalAddEvent';
 import ModalEditEvent from './ModalEditEvent';
 
-export function MonthCalendar({ events, modalOpen, setModalOpen }) {
+export function MonthCalendar({ events, modalAddEventOpen, setModalAddEventOpen }) {
   const [selectedDate, setSelectedDate] = useState(null);
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
 
   const handleDateClick = (arg) => {
     setSelectedDate(arg.dateStr);
-    setModalOpen(true);
+    setModalAddEventOpen(true);
   };
 
   const handleEventClick = (arg) => {
@@ -23,8 +23,8 @@ export function MonthCalendar({ events, modalOpen, setModalOpen }) {
     setEventModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const closeAddEventModal = () => {
+    setModalAddEventOpen(false);
     setSelectedDate(null);
   };
 
@@ -44,7 +44,7 @@ export function MonthCalendar({ events, modalOpen, setModalOpen }) {
         dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
-      <ModalAddEvent isOpen={modalOpen} onClose={closeModal} selectedDate={selectedDate}/>
+      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate}/>
       <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent}/>
     </main>
   )
