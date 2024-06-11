@@ -1,0 +1,63 @@
+.calendarWeekContent {
+    width: 99vw;
+}
+
+.calendarWeekContent .fc-header-toolbar {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarWeekContent .fc-toolbar-chunk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarWeekContent .fc-toolbar-title {
+    color: #689ECA!important;
+}
+
+.calendarWeekContent .fc-today-button {
+    left: 50%;
+    width: 60px!important;
+}
+
+.calendarWeekContent .fc-button {
+    width: 50px;
+    flex: none!important;
+    background-color: #689ECA!important;
+}
+
+.calendarWeekContent .fc-next-button {
+    margin-left: 10px!important;
+}
+
+.calendarWeekContent .fc-scrollgrid-sync-inner {
+    background-color: white!important;
+}
+
+.calendarWeekContent th .fc-timegrid-axis {
+    background-color: white!important;
+}
+
+.calendarWeekContent .fc-timegrid-slots {
+    z-index: 0;
+}
+
+.calendarWeekContent tr .fc-timegrid-slot-label {
+    background-color: white;
+}
+
+.calendarWeekContent .fc-timegrid-slot-lane {
+    background-color: white!important;
+} 
+
+.calendarWeekContent .fc-timeGridWeek-view {
+    height: 129vh!important;
+}
+
+.calendarWeekContent .fc-scroller-harness-liquid {
+    height: calc(130vh - 39px)!important;
+}

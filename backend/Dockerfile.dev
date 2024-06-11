@@ -1,0 +1,14 @@
+FROM alpine:latest
+
+RUN apk add --update nodejs npm
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+VOLUME /usr/src/app
+
+ENV PORT=80
+ENV JWT_SECRET=secret
+
+EXPOSE 80
+
+CMD npm install && npm run dev
