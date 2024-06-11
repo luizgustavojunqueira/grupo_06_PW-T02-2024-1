@@ -23,4 +23,8 @@ Then migrate the database schemas with the following commands:
     npx prisma migrate dev
 ```
 
+To stop the server, run:
 
+```bash
+    docker compose down
+```
