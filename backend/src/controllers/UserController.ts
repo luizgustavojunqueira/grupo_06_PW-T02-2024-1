@@ -7,21 +7,15 @@ import jsonwebtoken from "jsonwebtoken";
 export class Controller {
   async register(req: Request, res: Response) {
     try {
-      console.log("UAU");
       const prisma = new PrismaClient();
 
 
       const newUser = req.body;
 
-      console.log("teste");
-
-      console.log(newUser);
-
       const user = await prisma.user.create({
         data: { ...newUser, password: await bcrypt.hash(newUser.password, 10) },
       });
 
-      console.log("UAU2");
       return res.json(user);
     } catch (error) {
       return res.status(500).json({ message: error });
