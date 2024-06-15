@@ -11,9 +11,9 @@ function App() {
 
   /* virá do banco de dados */
   const events = [
-    { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00', id:"1" },
-    { title: 'Evento 2', start: '2024-06-03T12:00:00', end: '2024-06-03T14:00:00', id:"2" }
-  ]
+    { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00', id: '1', description: 'Descrição do evento 1', location: "rua sem nome" },
+    { title: 'Evento 2', start: '2024-06-03T12:00:00', end: '2024-06-03T14:00:00', id: '2', description: 'Descrição do evento 2', location: "rua sla" }
+  ];
 
   const renderView = () => {
     switch (view) {

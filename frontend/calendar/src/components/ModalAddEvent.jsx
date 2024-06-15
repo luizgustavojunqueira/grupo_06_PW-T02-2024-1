@@ -4,6 +4,7 @@ import '../assets/utils/css/modalAddEvent.css'
 function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:00' }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [location, setLocation] = useState('');
   const [startTime, setStartTime] = useState(initialStartTime);
   const [endTime, setEndTime] = useState('');
     
@@ -27,17 +28,23 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
     setEndTime(event.target.value);
   };
 
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
+  };
+
   const handleSubmit = () => {
     /* salvar no banco de dados e, provavelmente, atualizar uma var que irá atualizar a renderização dos eventos*/
     console.log('Título:', title);
     console.log('Descrição:', description);
-    console.log('horario: ', startTime)
-    console.log('horario final: ', endTime)
+    console.log('horario: ', startTime);
+    console.log('horario final: ', endTime);
+    console.log('localização: ', location);
 
     setTitle('');
     setDescription('');
     setEndTime('');
     setStartTime('');
+    setLocation('');
 
     onClose();
   };
@@ -59,6 +66,8 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
             <label htmlFor="startTime">Hora de Término:</label>
             <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
           </div>
+          <label htmlFor="location">Local:</label>
+          <input type="text" id="location" value={location} onChange={handleLocationChange} />
           <label htmlFor="description">Descrição:</label>
           <textarea id="description" value={description} onChange={handleDescriptionChange} />
           <button className="submitButton" onClick={handleSubmit}>Adicionar Evento</button>

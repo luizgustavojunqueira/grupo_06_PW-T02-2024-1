@@ -6,11 +6,17 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent}) {
   const [description, setDescription] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
+  const [location, setLocation] = useState('');
 
   useEffect(() => {
-    setTitle(selectedEvent.title || '');
-    setStartTime(formatTime(selectedEvent.start) || '');
-    setEndTime(formatTime(selectedEvent.end) || '');
+    if (selectedEvent) {
+      setTitle(selectedEvent.title || '');
+      setDescription(selectedEvent.extendedProps?.description || '');
+      setStartTime(formatTime(selectedEvent.start) || '');
+      setEndTime(formatTime(selectedEvent.end) || '');
+      setLocation(selectedEvent.extendedProps?.location || '');
+    }
+
   }, [isOpen]);
 
   const handleTitleChange = (event) => {
@@ -27,6 +33,10 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent}) {
 
   const handleEndTimeChange = (event) => {
     setEndTime(event.target.value);
+  };
+
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
   };
 
   const formatDate = (dateString) => {
@@ -76,6 +86,8 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent}) {
             <label htmlFor="startTime">Hora de Término:</label>
             <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
           </div>
+          <label htmlFor="location">Local:</label>
+          <input type="text" id="location" value={location} onChange={handleLocationChange} />
           <label htmlFor="description">Descrição:</label>
           <textarea id="description" value={description} onChange={handleDescriptionChange} />
           <button className="submitButton" onClick={handleSubmit}>Editar Evento</button>
