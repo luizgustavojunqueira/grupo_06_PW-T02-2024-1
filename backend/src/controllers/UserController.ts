@@ -4,11 +4,11 @@ import { UserRequest } from "../interfaces/UserRequest";
 import bcrypt from "bcryptjs";
 import jsonwebtoken from "jsonwebtoken";
 
+const prisma = new PrismaClient();
+
 export class Controller {
   async register(req: Request, res: Response) {
     try {
-      const prisma = new PrismaClient();
-
 
       const newUser = req.body;
 
@@ -23,7 +23,6 @@ export class Controller {
   }
 
   async login(req: Request, res: Response) {
-    const prisma = new PrismaClient();
 
     const { email, password } = req.body;
 
@@ -40,7 +39,7 @@ export class Controller {
         { expiresIn: "15m" }
       );
 
-      res.cookie("token", jwt);
+      res.cookie("token", jwt, { maxAge: 900000 });
       res.json({ message: "Logged in!" });
     } else {
       res.status(401).send("Invalid credentials!");
@@ -49,7 +48,6 @@ export class Controller {
 
   async deleteUser(req: UserRequest, res: Response) {
     try {
-      const prisma = new PrismaClient();
 
       const email = req.headers.user?.email;
 
@@ -71,7 +69,6 @@ export class Controller {
   }
 
   async getUsers(req: Request, res: Response) {
-    const prisma = new PrismaClient();
 
     const users = await prisma.user.findMany();
 

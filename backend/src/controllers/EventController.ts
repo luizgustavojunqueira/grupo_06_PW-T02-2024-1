@@ -2,12 +2,11 @@ import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
 import { UserRequest } from "../interfaces/UserRequest";
 
-import moment from "moment";
+const prisma = new PrismaClient();
 
 export class Controller {
   async createEvent(req: UserRequest, res: Response) {
     try {
-      const prisma = new PrismaClient();
 
       const newEvent = req.body;
 
@@ -25,7 +24,6 @@ export class Controller {
 
   async getUserEvents(req: UserRequest, res: Response) {
     try {
-      const prisma = new PrismaClient();
 
       const userEmail = req.headers.user?.email;
 
@@ -45,7 +43,6 @@ export class Controller {
 
   async updateEvent(req: UserRequest, res: Response) {
     try {
-      const prisma = new PrismaClient();
       const eventId = req.params.id;
       const updatedEvent = req.body;
 
@@ -64,7 +61,6 @@ export class Controller {
 
   async deleteEvent(req: UserRequest, res: Response) {
     try {
-      const prisma = new PrismaClient();
       const eventId = req.params.id;
 
       const eventEmail = await prisma.event.findUnique({
@@ -88,7 +84,6 @@ export class Controller {
 
   async getEventById(req: Request, res: Response) {
     try {
-      const prisma = new PrismaClient();
       const eventId = req.params.id;
 
       const event = await prisma.event.findUnique({
