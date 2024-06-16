@@ -78,3 +78,13 @@ input[type="text"], textarea {
   width: 100%;
   padding: 8px;
 }
+
+.containerButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.margin-right-button {
+    margin-right: 40px;
+}

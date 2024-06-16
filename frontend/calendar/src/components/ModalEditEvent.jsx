@@ -16,7 +16,7 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent, updateCalendar }) {
     { value: "NONE", label: "Nenhuma" },
     { value: 'DAILY', label: 'Diária' },
     { value: 'WEEKLY', label: 'Semanal' },
-    { value: 'MONTLHY', label: 'Mensal' }
+    { value: 'MONTHLY', label: 'Mensal' }
   ]
 
   useEffect(() => {
@@ -148,8 +148,10 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent, updateCalendar }) {
           <textarea id="description" value={description} onChange={handleDescriptionChange} />
           <label htmlFor='recurrence'>Recorrência: </label>
           <Select id="recurrence" options={recurrenceOptions} onChange={handleRecurrenceChange} placeholder="Recorrência" defaultValue={recurrenceOptions[0]} />
-          <button className="submitButton" onClick={handleSubmit}>Editar Evento</button>
-          <button className="submitButton" onClick={handleDelete}>Remover Evento</button>
+          <div className='containerButtons'>
+            <button className="submitButton margin-right-button" onClick={handleSubmit}>Editar Evento</button>
+            <button className="submitButton" onClick={handleDelete}>Remover Evento</button>
+          </div>
         </div>
       </div>
     )
