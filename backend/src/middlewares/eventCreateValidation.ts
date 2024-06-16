@@ -13,11 +13,6 @@ export function eventCreateValidation(
 
   const errors = [];
 
-  if (req.headers.user?.email != userEmail) {
-    errors.push("Cannot create an event for another user");
-    return res.status(400).json({ errors });
-  }
-
   if (!title) {
     errors.push("Requires a title");
   }
@@ -26,10 +21,6 @@ export function eventCreateValidation(
     req.body.initDate = moment().format();
   } else {
     req.body.initDate = moment(initDate).format();
-  }
-
-  if (!userEmail) {
-    errors.push("Requires a user email");
   }
 
   if (errors.length > 0) {

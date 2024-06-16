@@ -3,15 +3,15 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import timeGridPlugin from '@fullcalendar/timegrid'
-import ptBrLocale  from '../assets/utils/javascript/locale'
+import ptBrLocale from '../assets/utils/javascript/locale'
 import '../assets/utils/css/geral.css'
 import '../assets/utils/css/day.css'
 import ModalAddEvent from './ModalAddEvent';
 import ModalEditEvent from './ModalEditEvent';
 
-export function DayCalendar({ events, modalAddEventOpen, setModalAddEventOpen }) {
+export function DayCalendar({ events, modalAddEventOpen, setModalAddEventOpen, updateCalendar }) {
   const [selectedDate, setSelectedDate] = useState('');
-  const [selectedStartTime, setSelectedStartTime ] = useState('');
+  const [selectedStartTime, setSelectedStartTime] = useState('');
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
 
@@ -49,7 +49,7 @@ export function DayCalendar({ events, modalAddEventOpen, setModalAddEventOpen })
   return (
     <main className='calendarDayContent'>
       <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin ]}
+        plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
         initialView='timeGridDay'
         weekends={true}
         locales={[ptBrLocale]}
@@ -58,8 +58,8 @@ export function DayCalendar({ events, modalAddEventOpen, setModalAddEventOpen })
         dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
-      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} />
-      <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent}/>
+      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate} initialStartTime={selectedStartTime} updateCalendar={updateCalendar} />
+      <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent} updateCalendar={updateCalendar} />
     </main>
   )
 }

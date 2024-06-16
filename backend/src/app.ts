@@ -3,11 +3,13 @@ import router from "./routes/router";
 const cookieParser = require("cookie-parser");
 import * as OpenApiValidator from 'express-openapi-validator';
 import path from 'path';
+var cors = require('cors');
 
 const app: Application = express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.use('/docs', express.static(path.join(__dirname, '../public/api-explorer/')));
 app.get('/', (_, res) => res.redirect('/docs'));

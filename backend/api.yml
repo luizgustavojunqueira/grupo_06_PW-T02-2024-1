@@ -137,7 +137,6 @@ components:
       type: object
       required: 
         - title
-        - description
       properties:
         title:
           type: string
@@ -152,8 +151,6 @@ components:
         local:
           type: string
         recurrence:
-          type: string
-        userEmail:
           type: string
     UpdateEvent:
       type: object

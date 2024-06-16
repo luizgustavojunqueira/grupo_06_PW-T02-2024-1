@@ -8,7 +8,7 @@ import '../assets/utils/css/month.css'
 import ModalAddEvent from './ModalAddEvent';
 import ModalEditEvent from './ModalEditEvent';
 
-export function MonthCalendar({ events, modalAddEventOpen, setModalAddEventOpen }) {
+export function MonthCalendar({ events, modalAddEventOpen, setModalAddEventOpen, updateCalendar }) {
   const [selectedDate, setSelectedDate] = useState(null);
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
@@ -31,11 +31,11 @@ export function MonthCalendar({ events, modalAddEventOpen, setModalAddEventOpen 
   const closeEditEventModal = () => {
     setEventModalOpen(false);
   };
-  
+
   return (
     <main className='calendarMonthContent'>
       <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin ]}
+        plugins={[dayGridPlugin, interactionPlugin]}
         initialView='dayGridMonth'
         weekends={true}
         locales={[locale]}
@@ -44,8 +44,8 @@ export function MonthCalendar({ events, modalAddEventOpen, setModalAddEventOpen 
         dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
-      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate}/>
-      <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent}/>
+      <ModalAddEvent isOpen={modalAddEventOpen} onClose={closeAddEventModal} selectedDate={selectedDate} updateCalendar={updateCalendar} />
+      <ModalEditEvent isOpen={eventModalOpen} onClose={closeEditEventModal} selectedEvent={selectedEvent} updateCalendar={updateCalendar} />
     </main>
   )
 }
