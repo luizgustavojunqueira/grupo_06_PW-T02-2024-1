@@ -14,6 +14,10 @@ function App() {
   const [userEvents, setUserEvents] = useState([]);
   const [events, setEvents] = useState([]);
 
+  const formatTime = (date) => {
+    return `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
+  };
+
   function transformEvents() {
     let eList = []
     userEvents.forEach((value) => {
@@ -24,20 +28,25 @@ function App() {
       let eventDateEnd = new Date(value.endDate)
       let weekDay = eventDateStart.getDay();
 
-
       switch (value.recurrence) {
         case "DAILY":
           newEvent.startRecur = value.initDate
+          newEvent.startTime = formatTime(eventDateStart)
+          newEvent.endTime = formatTime(eventDateEnd)
           break;
         case "WEEKLY":
           newEvent.daysOfWeek = [weekDay]
           newEvent.startRecur = value.initDate
+          newEvent.startTime = formatTime(eventDateStart)
+          newEvent.endTime = formatTime(eventDateEnd)
           break;
         case "MONTHLY":
+          let startTime = formatTime(eventDateStart)
+          let endTime = formatTime(eventDateEnd)
           for (let i = 1; i < 12; i++) {
             let newStartDate = new Date(eventDateStart.setMonth(eventDateStart.getMonth() + 1)).toISOString();
             let newEndDate = new Date(eventDateEnd.setMonth(eventDateEnd.getMonth() + 1)).toISOString();
-            eList.push({ ...newEvent, start: newStartDate, env: newEndDate })
+            eList.push({ ...newEvent, start: newStartDate, env: newEndDate, startTime: startTime, endTime: endTime })
           }
           break;
       }
