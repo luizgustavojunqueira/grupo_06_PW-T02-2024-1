@@ -41,12 +41,10 @@ function App() {
           newEvent.endTime = formatTime(eventDateEnd)
           break;
         case "MONTHLY":
-          let startTime = formatTime(eventDateStart)
-          let endTime = formatTime(eventDateEnd)
           for (let i = 1; i < 12; i++) {
             let newStartDate = new Date(eventDateStart.setMonth(eventDateStart.getMonth() + 1)).toISOString();
             let newEndDate = new Date(eventDateEnd.setMonth(eventDateEnd.getMonth() + 1)).toISOString();
-            eList.push({ ...newEvent, start: newStartDate, env: newEndDate, startTime: startTime, endTime: endTime })
+            eList.push({ ...newEvent, start: newStartDate, end: newEndDate})
           }
           break;
       }
@@ -71,7 +69,7 @@ function App() {
         console.log(err);
       })
     } else {
-      axios.post("/api/login", { "email": "luizgustavossj@gmail.com", password: "123" }).then(() => {
+      axios.post("/api/login", { "email": "sla@gmail.com", password: "123" }).then(() => {
         console.log("logado");
       }).catch((err) => {
         console.log(err);

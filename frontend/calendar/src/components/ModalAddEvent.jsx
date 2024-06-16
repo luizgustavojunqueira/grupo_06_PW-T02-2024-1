@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-select'
 import '../assets/utils/css/modalAddEvent.css'
 import axios from 'axios';
-import locale from '../assets/utils/javascript/locale';
 
 function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:00', updateCalendar }) {
   const [title, setTitle] = useState('');
@@ -10,15 +9,14 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
   const [location, setLocation] = useState('');
   const [startTime, setStartTime] = useState(initialStartTime);
   const [endTime, setEndTime] = useState('');
-  const [recurrence, setRecurrence] = useState('');
+  const [recurrence, setRecurrence] = useState('NONE');
 
   const recurrenceOptions = [
     { value: "NONE", label: "Nenhuma" },
     { value: 'DAILY', label: 'Diária' },
     { value: 'WEEKLY', label: 'Semanal' },
-    { value: 'MONTLHY', label: 'Mensal' }
+    { value: 'MONTHLY', label: 'Mensal' }
   ]
-
 
   useEffect(() => {
     setStartTime(initialStartTime);
