@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .mainContainer{
     display: flex ;
     flex-direction: row;
@@ -12,6 +13,7 @@ body{
     text-align: center;
     background-color: white;
 }
+
 .sideSection {
     width: 40%;
     height: 100vh;
@@ -77,13 +79,22 @@ body{
 .inputAndIcon img {
     height: 80%;
 }
-.input{
+.input {
     width: 90%;
     height: 98%;
     border: 0;
     border-radius: 20px;
-    background-color: #f4f4f4;
+    background-color:#f4f4f4;
 }
+
+#nameInput{
+  width: 90%;
+  height: 60%;
+  border: 0;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+}
+
 .buttonInput{
     width: 50%;
     height: 60px;
