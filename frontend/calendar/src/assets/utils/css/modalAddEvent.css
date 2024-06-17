@@ -42,10 +42,19 @@ input[type="text"], textarea {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin: 8px;
 }
+
+.removeButton{
+  background-color: #BB2222
+}
+
 
 .submitButton:hover {
     background-color: #0056b3;
+}
+.removeButton:hover{
+  background-color: #FF2222
 }
 
 .schedule-container {
@@ -56,6 +65,13 @@ input[type="text"], textarea {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.timeSelection-container{
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .inputTime {
     appearance: none;
@@ -88,3 +104,4 @@ input[type="text"], textarea {
 .margin-right-button {
     margin-right: 40px;
 }
+

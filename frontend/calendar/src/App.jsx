@@ -44,7 +44,11 @@ function App() {
           for (let i = 1; i < 12; i++) {
             let newStartDate = new Date(eventDateStart.setMonth(eventDateStart.getMonth() + 1)).toISOString();
             let newEndDate = new Date(eventDateEnd.setMonth(eventDateEnd.getMonth() + 1)).toISOString();
+<<<<<<< HEAD
             eList.push({ ...newEvent, start: newStartDate, end: newEndDate})
+=======
+            eList.push({ ...newEvent, start: newStartDate, env: newEndDate, startTime: newStartDate, endTime: newEndDate })
+>>>>>>> 487faa3 (algumas mudanças na interface)
           }
           break;
       }
@@ -52,8 +56,6 @@ function App() {
       eList.push(newEvent);
 
     })
-
-    console.log(eList);
 
     setEvents(eList);
 
@@ -63,7 +65,7 @@ function App() {
   function updateCalendar() {
     if (Cookies.get('token')) {
       console.log("Tem o tokoen");
-      axios.get("/api/userEvents").then((response) => {
+      axios.get("/api/userEvents", { withCredentials: true }).then((response) => {
         setUserEvents(response.data);
       }).catch((err) => {
         console.log(err);
@@ -71,6 +73,7 @@ function App() {
     } else {
       axios.post("/api/login", { "email": "sla@gmail.com", password: "123" }).then(() => {
         console.log("logado");
+        console.log(Cookies.get('token'));
       }).catch((err) => {
         console.log(err);
       })
@@ -88,6 +91,7 @@ function App() {
   }, [userEvents])
 
   useEffect(() => {
+    document.title = "Calendar";
     updateCalendar();
   }, []);
 

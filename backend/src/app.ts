@@ -7,9 +7,14 @@ var cors = require('cors');
 
 const app: Application = express();
 
+var corsOptions = {
+  origin: 'http://localhost:8080',
+  credentials: true
+}
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use('/docs', express.static(path.join(__dirname, '../public/api-explorer/')));
 app.get('/', (_, res) => res.redirect('/docs'));

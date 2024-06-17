@@ -77,7 +77,7 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
 
 
     console.log(event);
-    axios.post('/api/createEvent', event).then((res) => {
+    axios.post('http://localhost:3001/api/createEvent', event, { withCredentials: true }).then((res) => {
 
       console.log(res);
       updateCalendar();
@@ -108,10 +108,17 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
           <label htmlFor="title">Título:</label>
           <input type="text" id="title" value={title} onChange={handleTitleChange} />
           <div className='schedule-container'>
-            <label htmlFor="startTime">Hora de Início:</label>
-            <input type="time" className="inputTime" value={startTime} onChange={handleStartTimeChange} />
-            <label htmlFor="startTime">Hora de Término:</label>
-            <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
+            <div className='timeSelection-container'>
+
+              <label htmlFor="startTime">Hora de Início:</label>
+              <input type="time" className="inputTime" value={startTime} onChange={handleStartTimeChange} />
+
+            </div>
+            <div className='timeSelection-container'>
+
+              <label htmlFor="endTime">Hora de Término:</label>
+              <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
+            </div>
           </div>
           <label htmlFor="location">Local:</label>
           <input type="text" id="location" value={location} onChange={handleLocationChange} />

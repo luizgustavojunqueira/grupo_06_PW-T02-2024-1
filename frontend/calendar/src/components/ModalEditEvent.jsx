@@ -97,7 +97,7 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent, updateCalendar }) {
     let event = { title: title, description: description, initDate: eventStartDate.toISOString(), endDate: eventEndDate.toISOString(), local: location, recurrence: recurrence }
 
 
-    axios.put(`/api/updateEvent/${id}`, event).then((res) => {
+    axios.put(`/api/updateEvent/${id}`, event, { withCredentials: true }).then((res) => {
       console.log(res);
       updateCalendar();
     }).catch((err) => {
@@ -137,10 +137,17 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent, updateCalendar }) {
           <label htmlFor="title">Título:</label>
           <input type="text" id="title" value={title} onChange={handleTitleChange} />
           <div className='schedule-container'>
-            <label htmlFor="startTime">Hora de Início:</label>
-            <input type="time" className="inputTime" value={startTime} onChange={handleStartTimeChange} />
-            <label htmlFor="startime">Hora de Término:</label>
-            <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
+            <div className='timeSelection-container'>
+
+              <label htmlFor="startTime">Hora de Início:</label>
+              <input type="time" className="inputTime" value={startTime} onChange={handleStartTimeChange} />
+
+            </div>
+            <div className='timeSelection-container'>
+
+              <label htmlFor="endTime">Hora de Término:</label>
+              <input type="time" className="inputTime" value={endTime} onChange={handleEndTimeChange} />
+            </div>
           </div>
           <label htmlFor="location">Local:</label>
           <input type="text" id="location" value={location} onChange={handleLocationChange} />

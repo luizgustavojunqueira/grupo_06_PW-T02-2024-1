@@ -36,10 +36,10 @@ export class Controller {
       const jwt = jsonwebtoken.sign(
         { user: { ...user, password: undefined } },
         process.env.JWT_SECRET as string,
-        { expiresIn: "15m" }
+        { expiresIn: "5m" }
       );
 
-      res.cookie("token", jwt, { maxAge: 900000 });
+      res.cookie("token", jwt);
       res.json({ message: "Logged in!" });
     } else {
       res.status(401).send("Invalid credentials!");
