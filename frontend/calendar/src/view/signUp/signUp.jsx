@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import iconEmail from "../../assets/utils/img/iconEmail.png"
 import iconName from "../../assets/utils/img/iconName.png"
 import iconPassword from "../../assets/utils/img/iconPassword.png"
-
+import axios from "axios";
 import './signUp.css'
 
 
@@ -11,7 +11,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
+  useEffect(() => { document.title = "Calendar" })
 
   async function handleSignUp(e) {
     e.preventDefault();
@@ -19,17 +19,11 @@ export default function SignUp() {
     if (name && email && password) {
       console.log(name, email, password);
     }
-
-
-
   }
 
   return (
 
-
     <div className="mainContainer">
-
-
       <section className="sideSection">
         <div className="container">
           <h1>Bem-vindo de volta!</h1>
@@ -44,7 +38,7 @@ export default function SignUp() {
         <form className="formSignUp" onSubmit={handleSignUp}>
           <div className="inputAndIcon">
             <img src={iconName} alt="" />
-            <input className="input" type="email" id="name" value={name} onChange={(e) => { setName(e.target.value) }} placeholder="Nome" />
+            <input className="input" type="text" id="nameInput" value={name} onChange={(e) => { setName(e.target.value) }} placeholder="Nome" />
           </div>
           <div className="inputAndIcon">
             <img src={iconEmail} alt="" />
@@ -57,8 +51,6 @@ export default function SignUp() {
           <input className="buttonInput" type="submit" value="Cadastrar" />
         </form>
       </main>
-
     </div>
-
   );
 }
