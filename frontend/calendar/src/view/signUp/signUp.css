@@ -1,5 +1,19 @@
+.mainContainer{
+    display: flex ;
+    flex-direction: row;
+}
+body{
+    width: 100%;
+}
+
+#root{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
 .sideSection {
-    width: 30%;
+    width: 40%;
     height: 100vh;
     background-color: #689ECA;
 }

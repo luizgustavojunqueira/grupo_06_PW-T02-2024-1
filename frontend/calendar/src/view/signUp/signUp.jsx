@@ -1,5 +1,8 @@
 import { useState } from "react";
-import '../../assets/utils/css/configGerais.css'
+import iconEmail from "../../assets/utils/img/iconEmail.png"
+import iconName from "../../assets/utils/img/iconName.png"
+import iconPassword from "../../assets/utils/img/iconPassword.png"
+
 import './signUp.css'
 
 
@@ -24,7 +27,9 @@ export default function SignUp() {
   }
 
   return (
-    <div className="Container"> 
+
+    
+    <div className="mainContainer"> 
     
     <section className="sideSection">
         <div className="container">
@@ -39,15 +44,15 @@ export default function SignUp() {
         <h1>Crie sua conta</h1>
         <form className="formSignUp" onSubmit={handleSignUp}>
             <div className="inputAndIcon">
-                <img src="../img/iconName.png" alt=""/>
-                <input className="input" type="text" id="name" value = {name} onChange = {(e) => {setName(e.target.value)}} placeholder="Nome"/>
+                <img src={iconName}alt=""/>
+                <input className="input" type="email" id="name" value = {name} onChange = {(e) => {setName(e.target.value)}} placeholder="Nome"/>
             </div>
             <div className="inputAndIcon">
-                <img src="../img/iconEmail.png" alt=""/>
+                <img src={iconEmail} alt=""/>
                 <input className="input" type="email" id="email"  value ={email} onChange={(e) => {setEmail(e.target.value)}} placeholder="Email"/>
             </div>
             <div className="inputAndIcon">
-                <img src="../img/iconPassword.png" alt=""/>
+                <img src={iconPassword} alt=""/>
                 <input className="input" type="password" id="password" value = {password} onChange = {(e) => {setPassword(e.target.value)}} placeholder="Senha"/>
             </div>
             <input className="buttonInput" type="submit" value="Cadastrar"/>
@@ -55,5 +60,6 @@ export default function SignUp() {
     </main>
 
 </div>
+
   );
 }
