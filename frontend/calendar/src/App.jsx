@@ -44,11 +44,7 @@ function App() {
           for (let i = 1; i < 12; i++) {
             let newStartDate = new Date(eventDateStart.setMonth(eventDateStart.getMonth() + 1)).toISOString();
             let newEndDate = new Date(eventDateEnd.setMonth(eventDateEnd.getMonth() + 1)).toISOString();
-<<<<<<< HEAD
-            eList.push({ ...newEvent, start: newStartDate, end: newEndDate})
-=======
-            eList.push({ ...newEvent, start: newStartDate, env: newEndDate, startTime: newStartDate, endTime: newEndDate })
->>>>>>> 487faa3 (algumas mudanças na interface)
+            eList.push({ ...newEvent, start: newStartDate, end: newEndDate })
           }
           break;
       }
