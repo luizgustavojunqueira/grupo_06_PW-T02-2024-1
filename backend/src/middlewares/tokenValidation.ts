@@ -4,27 +4,29 @@ import { JwtPayload } from "../interfaces/JwtPayload";
 import { UserRequest } from "../interfaces/UserRequest";
 
 export function validateToken(
-	req: UserRequest,
-	res: Response,
-	next: NextFunction
+  req: UserRequest,
+  res: Response,
+  next: NextFunction
 ) {
-	const token = req.cookies.token;
+  const token = req.cookies.token;
 
-	if (!token) {
-		return res
-			.status(401)
-			.json({ message: "Acess denied. No token provided!" });
-	}
+  console.log(req.cookies.token);
 
-	try {
-		const payload = jsonwebtoken.verify(
-			token,
-			process.env.JWT_SECRET as Secret
-		) as JwtPayload;
+  if (!token) {
+    return res
+      .status(401)
+      .json({ message: "Acess denied. No token provided!" });
+  }
 
-		req.headers["user"] = payload.user;
-		next();
-	} catch (error) {
-		return res.status(401).json({ message: error });
-	}
+  try {
+    const payload = jsonwebtoken.verify(
+      token,
+      process.env.JWT_SECRET as Secret
+    ) as JwtPayload;
+
+    req.headers["user"] = payload.user;
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: error });
+  }
 }

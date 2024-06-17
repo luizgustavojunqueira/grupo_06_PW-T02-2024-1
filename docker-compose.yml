@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5000:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+
+  backend_progweb:
+    build: 
+      context: ./backend/
+      dockerfile: Dockerfile.dev
+    container_name: backend_progweb
+    restart: unless-stopped
+    ports:
+      - 3001:80
+    depends_on:
+        - db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+    volumes:
+      - ./backend/:/usr/src/app
+
+volumes:
+  data:

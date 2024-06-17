@@ -1,0 +1,194 @@
+openapi: 3.0.1
+
+info:
+  title: API Calendário
+  version: '1'
+  description: API para gerenciamento de eventos e usuários de um Calendário
+
+servers:
+  - url: /api
+
+tags:
+  - name: Eventos
+    description: Operações relacionadas a eventos
+  - name: Usuários
+    description: Operações relacionadas a Usuários
+paths:
+  /userEvents:
+    get:
+      tags:
+        - Eventos
+      summary: Lista os eventos de um usuários
+      responses:
+        '200':
+          description: Lista de Eventos
+        '401':
+          description: Usuário não autenticado
+  /createEvent:
+    post:
+      tags:
+        - Eventos
+      summary: Cria um evento
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEvent'
+      responses:
+        '200':
+          description: Evento criado
+        '401':
+          description: Usuário não autenticado
+  /updateEvent/{id}:
+    put:
+      tags:
+        - Eventos
+      summary: Atualiza um evento
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do evento
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEvent'
+      responses:
+        '200':
+          description: Evento atualizado
+        '401':
+          description: Usuário não autenticado
+
+  /deleteEvent/{id}:
+    delete:
+      tags:
+        - Eventos
+      summary: Deleta um evento
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do evento
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Evento deletado
+        '401':
+          description: Usuário não autenticado
+
+  /register:
+    post:
+      tags:
+        - Usuários
+      summary: Registra um usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Usuário registrado
+
+  /login:
+    post:
+      tags:
+        - Usuários
+      summary: Autentica um usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+      responses:
+        '200':
+          description: Usuário autenticado
+        '401':
+          description: Usuário não autenticado
+  /user:
+    delete:
+      tags:
+        - Usuários
+      summary: Deleta um usuário
+      responses:
+        '200':
+          description: Usuário deletado
+        '401':
+          description: Usuário não autenticado
+  /spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        '200':
+          description: Return the API specification
+
+components:
+  schemas:
+    CreateEvent:
+      type: object
+      required: 
+        - title
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        initDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        local:
+          type: string
+        recurrence:
+          type: string
+    UpdateEvent:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        initDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        local:
+          type: string
+        recurrence:
+          type: string
+    User:
+      type: object
+      required:
+        - name
+        - email
+        - password
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    Login:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+        password:
+          type: string

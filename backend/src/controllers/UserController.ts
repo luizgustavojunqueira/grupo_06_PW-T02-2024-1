@@ -4,24 +4,18 @@ import { UserRequest } from "../interfaces/UserRequest";
 import bcrypt from "bcryptjs";
 import jsonwebtoken from "jsonwebtoken";
 
+const prisma = new PrismaClient();
+
 export class Controller {
   async register(req: Request, res: Response) {
     try {
-      console.log("UAU");
-      const prisma = new PrismaClient();
-
 
       const newUser = req.body;
-
-      console.log("teste");
-
-      console.log(newUser);
 
       const user = await prisma.user.create({
         data: { ...newUser, password: await bcrypt.hash(newUser.password, 10) },
       });
 
-      console.log("UAU2");
       return res.json(user);
     } catch (error) {
       return res.status(500).json({ message: error });
@@ -29,7 +23,6 @@ export class Controller {
   }
 
   async login(req: Request, res: Response) {
-    const prisma = new PrismaClient();
 
     const { email, password } = req.body;
 
@@ -43,7 +36,7 @@ export class Controller {
       const jwt = jsonwebtoken.sign(
         { user: { ...user, password: undefined } },
         process.env.JWT_SECRET as string,
-        { expiresIn: "15m" }
+        { expiresIn: "5m" }
       );
 
       res.cookie("token", jwt);
@@ -55,7 +48,6 @@ export class Controller {
 
   async deleteUser(req: UserRequest, res: Response) {
     try {
-      const prisma = new PrismaClient();
 
       const email = req.headers.user?.email;
 
@@ -77,7 +69,6 @@ export class Controller {
   }
 
   async getUsers(req: Request, res: Response) {
-    const prisma = new PrismaClient();
 
     const users = await prisma.user.findMany();
 
