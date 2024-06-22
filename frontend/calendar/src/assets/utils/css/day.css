@@ -58,3 +58,9 @@
 .calendarDayContent .fc-scroller-harness-liquid {
     height: calc(130vh - 39px)!important;
 }
+
+@media screen and (max-width: 1100px) {
+    .calendarDayContent {
+        width: 100%;
+    }
+}
