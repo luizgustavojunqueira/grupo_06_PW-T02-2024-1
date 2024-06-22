@@ -1,5 +1,6 @@
 .calendarWeekContent {
     width: 99vw;
+    height: 100vh;
 }
 
 .calendarWeekContent .fc-header-toolbar {
@@ -65,5 +66,13 @@
 @media screen and (max-width: 1100px) {
     .calendarWeekContent {
         width: 100%;
+    }
+
+    .calendarWeekContent .fc-scroller-harness-liquid {
+        height: 90vh!important;
+    }
+
+    .calendarWeekContent .fc-timeGridWeek-view {
+        height: 90vh!important;
     }
 }

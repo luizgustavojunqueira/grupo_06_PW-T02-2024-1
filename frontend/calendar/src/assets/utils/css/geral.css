@@ -10,7 +10,6 @@
     position: relative;
 }
 
-
 .divheader h1 {
     margin-left: 20px;
 }
@@ -49,4 +48,43 @@
 
 .fc-today-button {
     opacity: 1!important;
+}
+
+@media screen and (max-width: 1100px) {
+    .divButtons {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .divButtons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .viewModeButton {
+        width: 90px;
+        margin-left: 20px;
+    }
+
+    .divheader h1 {
+        display: none;
+    }
+
+    .settingsButton {
+        position: absolute;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .viewModeButton {
+        width: 80px;
+        margin-left: 10px;
+    }
+
+    .settingsButton {
+        position: absolute;
+        right: 0;
+    }
 }
