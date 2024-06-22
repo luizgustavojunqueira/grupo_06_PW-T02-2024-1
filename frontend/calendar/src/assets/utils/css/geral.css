@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 100px;
 }
 
 .viewModeButton {
@@ -28,14 +28,15 @@
     border-color: white;
 }
 
-.settingsButton {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #B199D7;
+.logoutButton {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+}
+
+.logoutButton:hover {
+    cursor: pointer;
 }
 
 .fc-col-header-cell-cushion {
@@ -70,11 +71,6 @@
     .divheader h1 {
         display: none;
     }
-
-    .settingsButton {
-        position: absolute;
-        right: 20px;
-    }
 }
 
 @media screen and (max-width: 430px) {
@@ -83,8 +79,7 @@
         margin-left: 10px;
     }
 
-    .settingsButton {
-        position: absolute;
+    .logoutButton {
         right: 0;
     }
 }

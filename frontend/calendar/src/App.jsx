@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { FaSignOutAlt } from 'react-icons/fa';
 import './App.css'
 import './assets/utils/css/geral.css'
 import { MonthCalendar } from './components/Month'
@@ -57,7 +58,6 @@ function App() {
 
   }
 
-
   function updateCalendar() {
     if (Cookies.get('token')) {
       console.log("Tem o tokoen");
@@ -76,11 +76,10 @@ function App() {
     }
   }
 
-  /* virá do banco de dados */
-  // const events = [
-  //   { title: 'Evento 1', start: '2024-06-02T10:00:00', end: '2024-06-02T12:00:00', id: '1', description: 'Descrição do evento 1', location: "rua sem nome" },
-  //   { title: 'Evento 2', start: '2024-06-03T12:00:00', end: '2024-06-03T14:00:00', id: '2', description: 'Descrição do evento 2', location: "rua sla" }
-  // ];
+  const handleLogout = () => {
+    console.log("oi?")
+    // Lógica para logout
+  };
 
   useEffect(() => {
     transformEvents()
@@ -113,8 +112,8 @@ function App() {
           <button className='viewModeButton' onClick={() => setView('month')}>Mês</button>
           <button className='viewModeButton' onClick={() => setView('week')}>Semana</button>
           <button className='viewModeButton' onClick={() => setView('day')}>Dia</button>
-          <button className='settingsButton'><p>C</p></button>
         </div>
+        <FaSignOutAlt className='logoutButton' onClick={handleLogout}/>
       </header>
       {renderView()}
     </>
