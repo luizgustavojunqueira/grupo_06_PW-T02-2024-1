@@ -77,7 +77,7 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
 
 
     console.log(event);
-    axios.post('http://localhost:3001/api/createEvent', event, { withCredentials: true }).then((res) => {
+    axios.post('/api/createEvent', event, { withCredentials: true }).then((res) => {
 
       console.log(res);
       updateCalendar();
