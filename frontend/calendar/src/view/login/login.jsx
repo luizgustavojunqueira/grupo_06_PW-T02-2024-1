@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate,Link} from "react-router-dom";
 import iconEmail from "../../assets/utils/img/iconEmail.png";
 import undraw_online_calendar_re_wk3t from "../../assets/utils/img/undraw_online_calendar_re_wk3t.svg";//ffrontend/calendar/src/assets/utils/img/undraw_online_calendar_re_wk3t.svg
 import iconPassword from "../../assets/utils/img/iconPassword.png";
@@ -59,8 +59,10 @@ export default function Login(){
                     
                 <input className="inputButton" type="submit" value="Entrar"/>
                 
+                
             </form>
-            
+            <p>Ainda não possui sua conta?</p>
+                <Link className="link-signUp" to="/">Cria sua conta agora</Link>
         </div>
     </main>
 

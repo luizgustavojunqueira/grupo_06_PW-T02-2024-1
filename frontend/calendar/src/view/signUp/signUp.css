@@ -117,3 +117,9 @@ body{
     margin-top: 30px;
     text-transform: uppercase; 
 }
+.errors{
+    font-size: 0.8em;
+    color: #FF5324;
+    align-self:self-start;
+    margin-left: 10%;
+}

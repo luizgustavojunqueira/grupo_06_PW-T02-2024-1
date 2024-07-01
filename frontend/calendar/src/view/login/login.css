@@ -40,7 +40,7 @@
     max-width: 100%;
 }
 .containerLogin .inputAndIcon img {
-    height: 70%;
+    height: 60%;
     margin-left: 5px;
 }
 .containerLogin .input{
@@ -50,7 +50,7 @@
     border-radius: 20px;
     background-color: #f4f4f4;
     color: black;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .containerLogin .inputButton {
     height: 70px;
@@ -69,5 +69,12 @@
 .containerLogin .inputButton:hover {
     transform: scale(1.05);
 }
+.containerLogin .link-signUp{
+    color:white;
+}
+.containerLogin .link-signUp:hover{
+    text-decoration: underline;
+}
+
 
 

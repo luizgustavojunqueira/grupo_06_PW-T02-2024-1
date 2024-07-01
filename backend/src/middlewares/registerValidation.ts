@@ -6,12 +6,16 @@ export function registerValidation(
   next: NextFunction
 ) {
   const regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
 
   const errors = [];
 
   if (!name) {
     errors.push("Requires a name");
+  }
+  
+  if (!password){
+    errors.push("Requires a password");
   }
 
   if (!email) {
