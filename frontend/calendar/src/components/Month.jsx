@@ -13,6 +13,8 @@ export function MonthCalendar({ events, modalAddEventOpen, setModalAddEventOpen,
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
 
+  updateCalendar();
+
   const handleDateClick = (arg) => {
     setSelectedDate(arg.dateStr);
     setModalAddEventOpen(true);
