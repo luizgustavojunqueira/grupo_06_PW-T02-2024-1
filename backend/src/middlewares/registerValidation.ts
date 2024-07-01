@@ -24,10 +24,6 @@ export function registerValidation(
     errors.push("Invalid email");
   }
 
-  if (!password) {
-    errors.push("Requires an password");
-  }
-
   if (errors.length > 0) {
     return res.status(400).json({ errors });
   }
