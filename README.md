@@ -14,7 +14,7 @@ Comandos para iniciar o backend, as linhas 3 e 4 são necessárias somente na pr
     exit
 ```
 
-Para rodar o backend
+Para rodar o frontend
 
 ```shell
     cd frontend/calendar/
