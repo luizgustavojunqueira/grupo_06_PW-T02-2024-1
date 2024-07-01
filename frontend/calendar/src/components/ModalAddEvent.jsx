@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Select from 'react-select'
 import '../assets/utils/css/modalAddEvent.css'
 import axios from 'axios';
@@ -17,6 +17,10 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
     { value: 'WEEKLY', label: 'Semanal' },
     { value: 'MONTHLY', label: 'Mensal' }
   ]
+
+  useEffect(() => {
+    updateCalendar();
+  }, [isOpen]);
 
   useEffect(() => {
     setStartTime(initialStartTime);
@@ -49,6 +53,7 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
 
   const handleSubmit = () => {
 
+
     let event = { title: title, description: description, local: location, recurrence: recurrence }
 
     if (!(startTime == null && endTime == null)) {
@@ -75,15 +80,11 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
       event.endDate = eventEndDate.toISOString();
     }
 
-
-    console.log(event);
     axios.post('/api/createEvent', event, { withCredentials: true }).then((res) => {
-
       console.log(res);
       updateCalendar();
     }).catch((err) => {
       console.log(err)
-
     })
 
     setTitle('');

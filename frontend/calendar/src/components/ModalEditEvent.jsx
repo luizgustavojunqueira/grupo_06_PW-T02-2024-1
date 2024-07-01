@@ -30,6 +30,8 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent, updateCalendar }) {
       setId(selectedEvent.id || null);
     }
 
+    updateCalendar();
+
   }, [isOpen]);
 
   const handleTitleChange = (event) => {
@@ -72,8 +74,6 @@ function ModalEditEvent({ isOpen, onClose, selectedEvent, updateCalendar }) {
   };
 
   const handleSubmit = () => {
-    /* salvar no banco de dados e, provavelmente, atualizar uma var que irá atualizar a renderização dos eventos*/
-
 
     let eventStartDate = new Date(selectedEvent.start);
     let eventEndDate = new Date(selectedEvent.end);

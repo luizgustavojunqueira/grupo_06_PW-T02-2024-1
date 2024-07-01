@@ -7,6 +7,8 @@ import { WeekCalendar } from './components/Week';
 import { DayCalendar } from './components/Day';
 import axios from 'axios';
 
+import { useNavigate } from 'react-router-dom';
+
 import Cookies from 'js-cookie'
 
 function App() {
@@ -15,78 +17,73 @@ function App() {
   const [userEvents, setUserEvents] = useState([]);
   const [events, setEvents] = useState([]);
 
+  const navigateLogin = useNavigate()
+
   const formatTime = (date) => {
     return `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
   };
 
-  function transformEvents() {
-    let eList = []
-    userEvents.forEach((value) => {
-
-      let newEvent = { title: value.title, start: value.initDate, end: value.endDate, id: value.id, description: value.description, location: value.local, recurrence: value.recurrence }
-
-      let eventDateStart = new Date(value.initDate)
-      let eventDateEnd = new Date(value.endDate)
-      let weekDay = eventDateStart.getDay();
-
-      switch (value.recurrence) {
-        case "DAILY":
-          newEvent.startRecur = value.initDate
-          newEvent.startTime = formatTime(eventDateStart)
-          newEvent.endTime = formatTime(eventDateEnd)
-          break;
-        case "WEEKLY":
-          newEvent.daysOfWeek = [weekDay]
-          newEvent.startRecur = value.initDate
-          newEvent.startTime = formatTime(eventDateStart)
-          newEvent.endTime = formatTime(eventDateEnd)
-          break;
-        case "MONTHLY":
-          for (let i = 1; i < 12; i++) {
-            let newStartDate = new Date(eventDateStart.setMonth(eventDateStart.getMonth() + 1)).toISOString();
-            let newEndDate = new Date(eventDateEnd.setMonth(eventDateEnd.getMonth() + 1)).toISOString();
-            eList.push({ ...newEvent, start: newStartDate, end: newEndDate })
-          }
-          break;
-      }
-
-      eList.push(newEvent);
-
-    })
-
-    setEvents(eList);
-
-  }
-
   function updateCalendar() {
     if (Cookies.get('token')) {
-      console.log("Tem o tokoen");
       axios.get("/api/userEvents", { withCredentials: true }).then((response) => {
         setUserEvents(response.data);
       }).catch((err) => {
         console.log(err);
       })
     } else {
-      axios.post("/api/login", { "email": "sla@gmail.com", password: "123" }).then(() => {
-        console.log("logado");
-        console.log(Cookies.get('token'));
-      }).catch((err) => {
-        console.log(err);
-      })
+      navigateLogin('/login', { replace: true });
     }
   }
 
   const handleLogout = () => {
-    console.log("oi?")
-    // Lógica para logout
+    console.log("teste");
+    Cookies.remove("token");
+    navigateLogin('/login', { replace: true });
   };
 
   useEffect(() => {
+    function transformEvents() {
+      let eList = []
+      userEvents.forEach((value) => {
+
+        let newEvent = { title: value.title, start: value.initDate, end: value.endDate, id: value.id, description: value.description, location: value.local, recurrence: value.recurrence }
+
+        let eventDateStart = new Date(value.initDate)
+        let eventDateEnd = new Date(value.endDate)
+        let weekDay = eventDateStart.getDay();
+
+        switch (value.recurrence) {
+          case "DAILY":
+            newEvent.startRecur = value.initDate
+            newEvent.startTime = formatTime(eventDateStart)
+            newEvent.endTime = formatTime(eventDateEnd)
+            break;
+          case "WEEKLY":
+            newEvent.daysOfWeek = [weekDay]
+            newEvent.startRecur = value.initDate
+            newEvent.startTime = formatTime(eventDateStart)
+            newEvent.endTime = formatTime(eventDateEnd)
+            break;
+          case "MONTHLY":
+            for (let i = 1; i < 12; i++) {
+              let newStartDate = new Date(eventDateStart.setMonth(eventDateStart.getMonth() + 1)).toISOString();
+              let newEndDate = new Date(eventDateEnd.setMonth(eventDateEnd.getMonth() + 1)).toISOString();
+              eList.push({ ...newEvent, start: newStartDate, end: newEndDate })
+            }
+            break;
+        }
+
+        eList.push(newEvent);
+
+      })
+
+      setEvents(eList);
+
+    }
     transformEvents()
   }, [userEvents])
 
   useEffect(() => {
-    document.title = "Calendar";
     updateCalendar();
   }, []);
 
@@ -113,7 +110,7 @@ function App() {
           <button className='viewModeButton' onClick={() => setView('week')}>Semana</button>
           <button className='viewModeButton' onClick={() => setView('day')}>Dia</button>
         </div>
-        <FaSignOutAlt className='logoutButton' onClick={handleLogout}/>
+        <FaSignOutAlt className='logoutButton' onClick={handleLogout} />
       </header>
       {renderView()}
     </>

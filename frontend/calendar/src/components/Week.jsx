@@ -15,6 +15,8 @@ export function WeekCalendar({ events, modalAddEventOpen, setModalAddEventOpen, 
   const [eventModalOpen, setEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
 
+  updateCalendar();
+
   const handleDateClick = (arg) => {
     const hours = arg.date.getHours();
     const minutes = arg.date.getMinutes();
