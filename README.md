@@ -18,5 +18,6 @@ Para rodar o frontend
 
 ```shell
     cd frontend/calendar/
+    npm install
     npm run dev
 ```
