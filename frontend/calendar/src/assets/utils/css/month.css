@@ -1,98 +1,122 @@
 :root {
-    --fc-border-color: black;
+  --fc-border-color: black;
 }
 
 .calendarMonthContent {
-    width: 99vw;
+  width: 99vw;
 }
 
 .calendarMonthContent .fc-header-toolbar {
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendarMonthContent .fc-toolbar-chunk {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendarMonthContent .fc-toolbar-title {
-    color: #689ECA!important;
+  color: #689eca !important;
 }
 
 .calendarMonthContent .fc-today-button {
-    left: 50%;
-    width: 60px!important;
+  left: 50%;
+  width: 60px !important;
 }
 
 .calendarMonthContent .fc-button {
-    width: 50px;
-    flex: none!important;
-    background-color: #689ECA!important;
+  width: 50px;
+  flex: none !important;
+  background-color: #689eca !important;
 }
 
 .calendarMonthContent .fc-next-button {
-    margin-left: 20px!important;
+  margin-left: 20px !important;
 }
 
 .calendarMonthContent .fc-col-header-cell {
-    background-color: white!important;
-    border-left: none;
-    border-right: none;
+  background-color: white !important;
+  border-left: none;
+  border-right: none;
 }
 
 .calendarMonthContent .fc-dayGridMonth-view {
-    height: 800px!important;
+  height: 800px !important;
 }
 
 .calendarMonthContent .fc-scroller-harness-liquid {
-    height: 800px!important
+  height: 800px !important;
 }
 
 .calendarMonthContent td .fc-day-past {
-    background-color: white!important;
-    height: 150px!important;
+  background-color: white !important;
+  height: 150px !important;
 }
 
 .calendarMonthContent td .fc-day-future {
-    background-color: white!important;
-    height: 150px!important;
+  background-color: white !important;
+  height: 150px !important;
 }
 
 .calendarMonthContent td .fc-day-today {
-    background-color: white!important;
-    height: 150px!important;
+  background-color: white !important;
+  height: 150px !important;
 }
 
 .calendarMonthContent .fc-timeGridMonthview {
-    height: 100vh!important;
+  height: 100vh !important;
 }
 
 .calendarMonthContent .fc-daygrid-day-frame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.calendarMonthContent .fc-daygrid-day-number{
-    color: black!important;
+.calendarMonthContent .fc-daygrid-day-number {
+  color: black !important;
 }
 
-.calendarMonthContent td .fc-day-today .fc-daygrid-day-top{
-    width: 40px;
-    height: 40px;
-    background-color: #598cb6;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.calendarMonthContent .fc-daygrid-day-events {
+  max-width: 90%;
+}
+
+.calendarMonthContent .fc-daygrid-event-harness {
+  max-width: 100%;
+}
+
+.calendarMonthContent td .fc-day-today .fc-daygrid-day-top {
+  width: 40px;
+  height: 40px;
+  background-color: #598cb6;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 1100px) {
-    .calendarMonthContent {
-        width: 100%;
-    }
+  .calendarMonthContent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .calendarMonthContent .fc-event-title {
+    display: none;
+  }
+
+  .calendarMonthContent .fc-event-time {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .calendarMonthContent .fc-event-title {
+    display: none;
+  }
 }

@@ -1,185 +1,181 @@
 .mainContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 body {
-    width: 100%;
+  width: 100%;
 }
 
 #root {
-    margin: 0;
-    width: 100%;
-    text-align: center;
-    background-color: white;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  background-color: white;
 }
 
 .sideSection {
-    width: 40%;
-    height: 100vh;
-    background-color: #689ECA;
+  width: 40%;
+  height: 100vh;
+  background-color: #689eca;
 }
 
 .containerSignUp {
-    height: 70vh;
-    margin-top: 22.8vh;
-    text-align: center;
+  height: 70vh;
+  margin-top: 22.8vh;
+  text-align: center;
 }
 
 .containerSignUp h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .containerSignUp p {
-    font-size: 1.3em;
-    margin-top: 45px;
+  font-size: 1.3em;
+  margin-top: 45px;
 }
 
 .containerSignUp .button-link {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .containerSignUp .button {
-    height: 10%;
-    width: 25%;
-    margin-top: 50px;
-    border-radius: 15px;
-    border-color: white;
-    border-width: 3px;
-    border-style: solid;
-    box-shadow: 5px 7px 5px #598cb6;
-    background-color: #689ECA;
-    cursor: pointer;
-    text-transform: uppercase;
-    color: white;
-
+  height: 10%;
+  width: 25%;
+  margin-top: 50px;
+  border-radius: 15px;
+  border-color: white;
+  border-width: 3px;
+  border-style: solid;
+  box-shadow: 5px 7px 5px #598cb6;
+  background-color: #689eca;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
 }
 
 .containerSignUp button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .mainContentSignUp {
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-weight: 800;
-    text-transform: uppercase;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .mainContentSignUp h1 {
-    color: #689ECA;
+  color: #689eca;
 }
 
 .formSignUp {
-    height: 70%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mainContentSignUp .inputAndIcon {
-    width: 80%;
-    height: 90px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #f4f4f4;
+  width: 80%;
+  height: 90px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #f4f4f4;
 }
 
 .mainContentSignUp .inputAndIcon img {
-    height: 80%;
-    margin-right: 10px;
+  height: 80%;
+  margin-right: 10px;
 }
 
 .mainContentSignUp .input {
-    width: 90%;
-    height: 98%;
-    border: 0;
-    border-radius: 20px;
-    background-color: #f4f4f4;
-    color: black;
-    font-size: 1.3em;
+  width: 90%;
+  height: 98%;
+  border: 0;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  color: black;
+  font-size: 1.3em;
 }
 
 #nameInput {
-    width: 90%;
-    height: 60%;
-    border: 0;
-    border-radius: 20px;
-    background-color: #f4f4f4;
+  width: 90%;
+  height: 60%;
+  border: 0;
+  border-radius: 20px;
+  background-color: #f4f4f4;
 }
 
 .buttonInput {
-    width: 25%;
-    height: 60px;
-    border-radius: 20px;
-    border: 0;
-    background-color: #689ECA;
-    cursor: pointer;
-    color: white;
-    font-size: 1.3em;
-    font-weight: 600;
-    margin-top: 30px;
-    text-transform: uppercase;
+  width: 25%;
+  height: 60px;
+  border-radius: 20px;
+  border: 0;
+  background-color: #689eca;
+  cursor: pointer;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 30px;
+  text-transform: uppercase;
 }
 
 .errors {
-    font-size: 0.8em;
-    color: #FF5324;
-    align-self: self-start;
-    margin-left: 10%;
+  font-size: 0.8em;
+  color: #ff5324;
+  align-self: self-start;
+  margin-left: 10%;
 }
 
-
 @media (max-width: 480px) {
-    .mainContainer {
+  .mainContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-    }
+  .sideSection {
+    width: 100%;
+  }
 
-    .sideSection {
-        width: 100%;
-    }
+  .mainContentSignUp {
+    width: 100%;
+  }
 
-    .mainContentSignUp {
-        width: 100%;
-    }
+  .container {
+    width: 100%;
+    padding: 10px;
+    height: 70vh;
+    margin-top: 22.8vh;
+    text-align: center;
+  }
 
-    .container {
-        width: 100%;
-        padding: 10px;
-        height: 70vh;
-        margin-top: 22.8vh;
-        text-align: center;
-    }
+  .formSignUp {
+    width: 100%;
+  }
 
-    .formSignUp {
-        width: 100%;
-    }
-
-    .buttonInput {
-        width: 70%;
-    }
+  .buttonInput {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 900px) and (min-width: 481px) {
-    .buttonInput {
-        width: 60%;
-    
-    }
+  .buttonInput {
+    width: 60%;
+  }
 
-    .containerSignUp .button {
-        width: 50%;
-    }
-
+  .containerSignUp .button {
+    width: 50%;
+  }
 }
+

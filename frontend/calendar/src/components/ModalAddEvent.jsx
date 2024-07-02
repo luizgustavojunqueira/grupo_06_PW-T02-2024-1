@@ -19,10 +19,6 @@ function ModalAddEvent({ isOpen, onClose, selectedDate, initialStartTime = '00:0
   ]
 
   useEffect(() => {
-    updateCalendar();
-  }, [isOpen]);
-
-  useEffect(() => {
     setStartTime(initialStartTime);
   }, [initialStartTime]);
 
