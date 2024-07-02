@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Login from './view/login/login.jsx'
 import App from './App.jsx'
@@ -12,17 +11,17 @@ import SignUp from './view/signUp/SignUp.jsx'
 const router = createBrowserRouter(
   [{
     path: "/",
-    element: <SignUp/>,
+    element: <SignUp />,
     //errorElement:
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
     //errorElement:
   },
   {
     path: "/calendar",
-    element: <App/>
+    element: <App />
     //errorElement:
   }]
 
@@ -31,6 +30,6 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router}>
-    
+
   </RouterProvider>
 )
