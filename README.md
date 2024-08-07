@@ -2,6 +2,12 @@
 
 Esse repositório contém os artefatos desenvolvidos como um projeto avaliativo para a disciplina de Programação para Web durante o curso de Ciência da Computação na UFMS.
 
+O projeto foi desenvolvido pelo seguinte grupo de 3 alunos:
+
+- [Luiz Gustavo](https://github.com/luizgustavojunqueira)
+- [Camila Cardoso](https://github.com/camilacaceres1d)
+- [Thiago Aparecido](https://github.com/Tcheagow)
+
 ## Descrição do Tema
 
 Neste projeto, estamos buscando um desenvolvedor web altamente competente
